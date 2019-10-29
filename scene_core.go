@@ -1,6 +1,8 @@
 package box
 
 import (
+	"github.com/suboat/go-contrib"
+
 	"fmt"
 	"math/rand"
 	"runtime"
@@ -28,7 +30,7 @@ func (s *Scene) run(form *FormScene, cache chan *ResultScene) (ret []*ResultScen
 	if s.DefaultRobot == nil {
 		// 未定义默认机器人
 		if len(s.RobotArray) == 0 {
-			return nil, ErrParamInvalid.SetVars("defaultRobot")
+			return nil, contrib.ErrParamInvalid.SetVars("defaultRobot")
 		}
 		s.DefaultRobot = s.RobotArray[0]
 	}
